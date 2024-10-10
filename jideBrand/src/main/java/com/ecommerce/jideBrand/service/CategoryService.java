@@ -1,15 +1,17 @@
 package com.ecommerce.jideBrand.service;
 
 import com.ecommerce.jideBrand.model.Category;
+import com.ecommerce.jideBrand.payload.CategoryDTO;
+import com.ecommerce.jideBrand.payload.CategoryResponse;
 
-import java.util.List;
+
 
 public interface CategoryService {
-    List<Category> getAllCategories();
+    CategoryResponse getAllCategories(Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 
-   void  createCategory(Category category);
+   CategoryDTO createCategory(CategoryDTO category);
 
-    String deleteCategory(Long categoryId);
+    CategoryDTO deleteCategory(Long categoryId);
 
-    Category updateCategory(Long categoryId, Category category);
+    CategoryDTO updateCategory(Long categoryId, CategoryDTO categoryDTO);
 }
